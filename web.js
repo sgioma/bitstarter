@@ -8,8 +8,8 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
 var fs = require('fs');
 var contentBuffer=fs.readFileSync('index.html');
-
-  response.send('text');
+var texto=contentBuffer.toString();
+  response.send(texto);
 });
 
 var port = process.env.PORT || 5000;
